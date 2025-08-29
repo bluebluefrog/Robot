@@ -1,0 +1,185 @@
+{
+  "joints": [
+    {
+      "name": "hips",
+      "path": "Armature/Hips",
+      "x": false, "y": true, "z": false,
+      "limitX": { "min": 0, "max": 0 },
+      "limitY": { "min": -45, "max": 45 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+    {
+      "name": "spine_1",
+      "path": "Armature/Hips/Spine 1",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -15, "max": 15 },
+      "limitY": { "min": -25, "max": 25 },
+      "limitZ": { "min": -10, "max": 10 }
+    },
+    {
+      "name": "spine_2",
+      "path": "Armature/Hips/Spine 1/Spine 2",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -15, "max": 15 },
+      "limitY": { "min": -25, "max": 25 },
+      "limitZ": { "min": -10, "max": 10 }
+    },
+    {
+      "name": "spine_3",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -20, "max": 20 },
+      "limitY": { "min": -30, "max": 30 },
+      "limitZ": { "min": -15, "max": 15 }
+    },
+
+    {
+      "name": "neck",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Neck",
+      "x": true, "y": true, "z": false,
+      "limitX": { "min": -30, "max": 30 },
+      "limitY": { "min": -60, "max": 60 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+    {
+      "name": "head",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Neck/Head",
+      "x": true, "y": true, "z": false,
+      "limitX": { "min": -25, "max": 25 },
+      "limitY": { "min": -45, "max": 45 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+
+    {
+      "name": "left_shoulder",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Left Shoulder",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -90, "max": 90 },
+      "limitY": { "min": -120, "max": 120 },
+      "limitZ": { "min": -60, "max": 60 }
+    },
+    {
+      "name": "left_upper_arm",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Left Shoulder/Left Arm",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -60, "max": 60 },
+      "limitY": { "min": -60, "max": 60 },
+      "limitZ": { "min": -60, "max": 60 }
+    },
+    {
+      "name": "left_elbow",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Left Shoulder/Left Arm/Left Forearm",
+      "x": true, "y": false, "z": false,
+      "limitX": { "min": 0, "max": 135 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+    {
+      "name": "left_wrist",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Left Shoulder/Left Arm/Left Forearm/Left Hand",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -45, "max": 45 },
+      "limitY": { "min": -45, "max": 45 },
+      "limitZ": { "min": -30, "max": 30 }
+    },
+
+    {
+      "name": "right_shoulder",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Right Shoulder",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -90, "max": 90 },
+      "limitY": { "min": -120, "max": 120 },
+      "limitZ": { "min": -60, "max": 60 }
+    },
+    {
+      "name": "right_upper_arm",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Right Shoulder/Right Arm",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -60, "max": 60 },
+      "limitY": { "min": -60, "max": 60 },
+      "limitZ": { "min": -60, "max": 60 }
+    },
+    {
+      "name": "right_elbow",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Right Shoulder/Right Arm/Right Forearm",
+      "x": true, "y": false, "z": false,
+      "limitX": { "min": 0, "max": 135 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+    {
+      "name": "right_wrist",
+      "path": "Armature/Hips/Spine 1/Spine 2/Spine 3/Right Shoulder/Right Arm/Right Forearm/Right Hand",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -45, "max": 45 },
+      "limitY": { "min": -45, "max": 45 },
+      "limitZ": { "min": -30, "max": 30 }
+    },
+
+    {
+      "name": "left_hip",
+      "path": "Armature/Hips/Left Thigh",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -90, "max": 90 },
+      "limitY": { "min": -45, "max": 45 },
+      "limitZ": { "min": -60, "max": 60 }
+    },
+    {
+      "name": "left_knee",
+      "path": "Armature/Hips/Left Thigh/Left Leg",
+      "x": true, "y": false, "z": false,
+      "limitX": { "min": 0, "max": 140 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+    {
+      "name": "left_ankle",
+      "path": "Armature/Hips/Left Thigh/Left Leg/Left Foot",
+      "x": true, "y": false, "z": true,
+      "limitX": { "min": -40, "max": 40 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": -20, "max": 20 }
+    },
+    {
+      "name": "left_toes",
+      "path": "Armature/Hips/Left Thigh/Left Leg/Left Foot/Left Toes",
+      "x": true, "y": false, "z": false,
+      "limitX": { "min": -30, "max": 60 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+
+    {
+      "name": "right_hip",
+      "path": "Armature/Hips/Right Thigh",
+      "x": true, "y": true, "z": true,
+      "limitX": { "min": -90, "max": 90 },
+      "limitY": { "min": -45, "max": 45 },
+      "limitZ": { "min": -60, "max": 60 }
+    },
+    {
+      "name": "right_knee",
+      "path": "Armature/Hips/Right Thigh/Right Leg",
+      "x": true, "y": false, "z": false,
+      "limitX": { "min": 0, "max": 140 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": 0, "max": 0 }
+    },
+    {
+      "name": "right_ankle",
+      "path": "Armature/Hips/Right Thigh/Right Leg/Right Foot",
+      "x": true, "y": false, "z": true,
+      "limitX": { "min": -40, "max": 40 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": -20, "max": 20 }
+    },
+    {
+      "name": "right_toes",
+      "path": "Armature/Hips/Right Thigh/Right Leg/Right Foot/Right Toes",
+      "x": true, "y": false, "z": false,
+      "limitX": { "min": -30, "max": 60 },
+      "limitY": { "min": 0, "max": 0 },
+      "limitZ": { "min": 0, "max": 0 }
+    }
+  ]
+}
