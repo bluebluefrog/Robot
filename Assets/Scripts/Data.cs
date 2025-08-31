@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 [Serializable] public class JointLimit { public float min; public float max; }
 [Serializable] public class JointConfig {

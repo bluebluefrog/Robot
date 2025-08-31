@@ -12,6 +12,10 @@ public class JointController : MonoBehaviour
     private readonly Dictionary<string, JointConfig> cfgMap = new();
     public Pose CurrentPose = new Pose();
     private bool ready;
+    
+    // 在 JointController 类字段区新增：
+    private readonly Dictionary<string, Vector3> _initialLocalEuler = new();
+
 
     void Awake()
     {
@@ -24,13 +28,48 @@ public class JointController : MonoBehaviour
         foreach (var jc in cfg.joints)
         {
             var t = robotRoot.Find(jc.path);
+            // 你原来的 foreach (var jc in cfg.joints) { ... } 里，找到到 t 后加：
+            if (t != null)
+            {
+                jointMap[jc.name] = t;
+                // 记录初始局部欧拉角（按导入时的姿态）
+                if (!_initialLocalEuler.ContainsKey(jc.name))
+                    _initialLocalEuler[jc.name] = t.localEulerAngles;
+            }
+            
             if (t == null) Debug.LogWarning($"找不到关节路径: {jc.path}");
             else jointMap[jc.name] = t;
             cfgMap[jc.name] = jc;
             CurrentPose[jc.name] = new AxisAngles();
+            
+      
+
         }
         ready = true;
+        
     }
+    
+    public void ResetAllJoints()
+    {
+        foreach (var kv in jointMap)
+        {
+            string name = kv.Key;
+            var t = kv.Value;
+
+            // 如果记录了初始角度，用它；否则回零
+            if (_initialLocalEuler.TryGetValue(name, out var euler))
+                t.localEulerAngles = euler;
+            else
+                t.localEulerAngles = Vector3.zero;
+
+            // 同步内存中的姿态缓存（这里清空，表示“未设置”）
+            if (CurrentPose.ContainsKey(name))
+                CurrentPose[name] = new AxisAngles();
+            else
+                CurrentPose.Add(name, new AxisAngles());
+        }
+    }
+
 
     public bool HasJoint(string name) => ready && jointMap.ContainsKey(name);
     public JointConfig GetConfig(string name) => cfgMap.TryGetValue(name, out var c) ? c : null;
@@ -71,4 +110,12 @@ public class JointController : MonoBehaviour
         if (d < -180f) d += 360f;
         return d;
     }
+    
+    // JointController.cs 里新增：
+    public IReadOnlyDictionary<string, JointConfig> GetAllConfigs()
+    {
+        // cfgMap 是你已有的 name -> JointConfig 映射（前文版本里有）
+        return cfgMap;
+    }
+
 }

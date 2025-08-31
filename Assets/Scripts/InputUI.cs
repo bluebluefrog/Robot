@@ -38,6 +38,8 @@ public class InputUI : MonoBehaviour
         if (zInput) zInput.onEndEdit.AddListener(_ => ValidateAndApply());
 
         if (errorText) errorText.text = "";
+        
+        RefreshUI();
     }
 
     void ValidateAndApply()
@@ -91,4 +93,37 @@ public class InputUI : MonoBehaviour
         }
         return sb.ToString();
     }
+    
+    // InputUI.cs 中新增：
+    public void SetJointName(string newName)
+    {
+        if (string.IsNullOrEmpty(newName) || controller == null || !controller.HasJoint(newName)) return;
+        jointName = newName;
+        cfg = controller.GetConfig(jointName);
+        RefreshUI();
+    }
+
+// InputUI.cs 中新增（用于根据 cfg 显示/隐藏 X/Y/Z 输入框、清空错误）
+    public void RefreshUI()
+    {
+        if (cfg == null) return;
+        if (xInput) xInput.gameObject.SetActive(cfg.x);
+        if (yInput) yInput.gameObject.SetActive(cfg.y);
+        if (zInput) zInput.gameObject.SetActive(cfg.z);
+        if (errorText) errorText.text = "";
+    }
+    public void ResetAllJointsButton()
+    {
+        if (controller == null) return;
+
+        controller.ResetAllJoints();
+
+        // 清空当前面板的输入与错误提示（可选）
+        if (xInput) xInput.text = "X Input";
+        if (yInput) yInput.text = "Y Input";
+        if (zInput) zInput.text = "Z Input";
+        if (errorText) errorText.text = "";
+    }
+
+    
 }
