@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputUI
   controller: {fileID: 382012522}
-  jointName: 
+  jointName: neck
   xInput: {fileID: 1287117160}
   yInput: {fileID: 627014135}
   zInput: {fileID: 1331153039}
